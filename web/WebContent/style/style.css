@@ -1,0 +1,70 @@
+body {
+    background-color: gainsboro;
+    font-family: "Courier New";
+}
+
+header h1 {
+    font-size: medium;
+    text-align: left;
+    font-weight: lighter;
+    font-family: Century;
+}
+
+header > h1::first-line {
+    font-size: xx-large;
+    color: beige;
+}
+
+button {
+  width: 70%;
+}
+
+h1 {
+    color: beige;
+    font-weight: normal;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr:nth-child(odd) {
+    background-color: darkgray;
+}
+
+input[type=submit] {
+    font-family: "Courier New";
+    width: 100%;
+}
+
+input[type=text]:focus {
+    background-color: antiquewhite;
+}
+
+input {
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+th.spaceTop {
+    padding-top: 3em;
+}
+
+img {
+    margin-left: 10px;
+    background-color: white;
+    display: block;
+}
+
+.imgCell {
+    background-color: gainsboro;
+    vertical-align: top;
+}
+
+#R_field:focus {
+    background-color: antiquewhite;
+}

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <script type="text/javascript">
+    function validateForm() {
+      var x_str = document.forms["Main_Form"]["X"].value;
+      var r_str = document.forms["Main_Form"]["R"].value;
+      var x = parseFloat(x_str);
+      var r = parseFloat(r_str);
+      if (x!=NaN && x>=-5 && x<=5 && r!=NaN && r>=1 && x<=4)
+        return true;
+      alert("WRONG INPUT!!1!ONE!");
+      return false;
+    }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Лабораторная работа №7</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+
+</head>
+
+<body>
+  <table>
+    <form action="" onSubmit="return validateForm()" method="GET" name="Main_Form" id="main">
+        <tr>
+            <td colspan="3">
+                <header>
+                    <h1>Лабораторная работа №7
+                      <br>Выполнили студенты гр. P3210:<br>Милосердов А.О.<br>Калугин Ф.И.<br>Вариант 1010
+                    </h1>
+                </header>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2" width="75%" class="spaceTop">Data input</th>
+            <th class="spaceTop">Areas</th>
+        </tr>
+        <tr>
+            <td>X:</td>
+            <td><input type="text" placeholder="[-5; 5]" name="X" id="X_field" required/></td>
+            <td rowspan="4" class="imgCell"><img src="img/areas.png"></td>
+        </tr>
+        <tr>
+            <td>Y:</td>
+			  <td>
+				    <button type="submit" name="Y" value="-2" id="Y_field_-2">-2</button><br>
+				    <button type="submit" name="Y" value="-1.5" id="Y_field_-1.5">-1.5</button><br>
+				    <button type="submit" name="Y" value="-1" id="Y_field_-1">-1</button><br>
+				    <button type="submit" name="Y" value="-0.5" id="Y_field_-0.5">-0.5</button><br>
+			    	<button type="submit" name="Y" value="0" id="Y_field_0">0</button><br>
+				    <button type="submit" name="Y" value="0.5" id="Y_field_0.5">0.5</button><br>
+				    <button type="submit" name="Y" value="1" id="Y_field_1">1</button><br>
+				    <button type="submit" name="Y" value="1.5" id="Y_field_1.5">1.5</button><br>
+				    <button type="submit" name="Y" value="2" id="Y_field_2">2</button><br>
+			  <td>
+        </tr>
+        <tr>
+            <td>R:</td>
+            <td><input type="text" placeholder="[1; 4]" name="R" id="R_field" required/></td>
+        </tr>
+    </form>
+</table>
+
+
+</body>
+</html>
