@@ -37,7 +37,7 @@ public class AreaCheckServlet extends HttpServlet {
 		List<String[]> reqlist = (List<String[]>)context.getAttribute("reqlist");
 		if(reqlist == null)
 			reqlist = new ArrayList<String[]>();
-		reqlist.add(new String[]{x_str,y_str,r_str,res});
+		reqlist.add(0, new String[]{x_str,y_str,r_str,res});
 		context.setAttribute("reqlist",reqlist);
 
 		InputStream inputStream = context.getResourceAsStream("/response_form.html");
