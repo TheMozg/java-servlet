@@ -13,6 +13,14 @@
       alert("WRONG INPUT!!1!ONE!");
       return false;
     }
+
+    function point_it(event){
+	    pos_x = event.offsetX?(event.offsetX):event.pageX-document.getElementById("pointer_div").offsetLeft;
+	    pos_y = event.offsetY?(event.offsetY):event.pageY-document.getElementById("pointer_div").offsetTop;
+	    document.Main_Form.form_x.value = pos_x;
+	    document.Main_Form.form_y.value = pos_y;
+    }
+
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Лабораторная работа №7</title>
@@ -39,7 +47,9 @@
         <tr>
             <td>Y:</td>
             <td><input type="text" placeholder="[-5; 5]" name="Y" id="Y_field" required/></td>
-            <td rowspan="4" class="imgCell"><img src="img/areas.png"></td>
+            <td rowspan="4" class="imgCell"><img id="pointer_div" onclick="point_it(event)" src="img/TrimmedAreas.png">
+            You pointed on x = <input type="text" name="form_x" size="4" /> - y = <input type="text" name="form_y" size="4" />
+            </td>
         </tr>
         <tr>
             <td>X:</td>
