@@ -32,7 +32,7 @@
   <table>
     <form action="" onSubmit="return validateForm()" method="POST" name="Main_Form" id="main">
         <tr>
-            <td colspan="3">
+            <td colspan="4">
                 <header>
                     <h1>Лабораторная работа №7
                       <br>Выполнили студенты гр. P3210:<br>Милосердов А.О.<br>Калугин Ф.И.<br>Вариант 1010
@@ -41,13 +41,13 @@
             </td>
         </tr>
         <tr>
-            <th colspan="2" width="75%" class="spaceTop">Data input</th>
-            <th class="spaceTop">Areas</th>
+            <th colspan="2" class="spaceTop">Data input</th>
+            <th colspan="2" class="spaceTop">Areas</th>
         </tr>
         <tr>
             <td>Y:</td>
             <td><input type="text" placeholder="[-5; 5]" name="Y" id="Y_field" required/></td>
-            <td rowspan="4" class="imgCell"><img id="pointer_div" onclick="point_it(event)" src="img/TrimmedAreas.png">
+            <td colspan="2" rowspan="4" align="center" class="imgCell"><img id="pointer_div" onclick="point_it(event)" src="img/TrimmedAreas.png">
             You pointed on x = <input type="text" name="form_x" size="4" /> - y = <input type="text" name="form_y" size="4" />
             </td>
         </tr>
@@ -78,23 +78,29 @@
             </td>
         </tr>
     </form>
-</table>
-
-<table>
-<%
-    List<String[]> reqlist = (List<String[]>)application.getAttribute("reqlist");
-    if( reqlist != null){
-      for (String[] req : reqlist) {
-        %>
-         <tr>
-           <% for (String str : req) { %>
-           <td><% out.println( str ); %></td>
-           <% } %>
-         </tr>
-        <%
+    <tr>
+      <th colspan="4" class="spaceTop">Previous results</th>
+    </tr>
+    <tr>
+    <th>X</th>
+    <th>Y</th>
+    <th>R</th>
+    <th>RESULT</th>
+    </tr>
+  <%
+      List<String[]> reqlist = (List<String[]>)application.getAttribute("reqlist");
+      if( reqlist != null){
+        for (String[] req : reqlist) {
+          %>
+           <tr>
+             <% for (String str : req) { %>
+             <td align="center"><% out.println( str ); %></td>
+             <% } %>
+           </tr>
+          <%
+        }
       }
-    }
-%>
+  %>
 </table>
 
 </body>
