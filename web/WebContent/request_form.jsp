@@ -17,8 +17,13 @@
     function point_it(event){
 	    pos_x = event.offsetX?(event.offsetX):event.pageX-document.getElementById("pointer_div").offsetLeft;
 	    pos_y = event.offsetY?(event.offsetY):event.pageY-document.getElementById("pointer_div").offsetTop;
-	    document.Main_Form.form_x.value = pos_x;
-	    document.Main_Form.form_y.value = pos_y;
+      pos_x -= 100;
+      pos_y -= 100;
+      pos_y = -pos_y;
+      var r_str = document.forms["Main_Form"]["R"].value;
+      var r = parseFloat(r_str);
+	    document.Main_Form.form_x.value = pos_x/80*r;
+	    document.Main_Form.form_y.value = pos_y/80*r;
     }
 
     </script>
