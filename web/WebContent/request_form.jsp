@@ -26,6 +26,10 @@
 	    document.Main_Form.form_y.value = pos_y/80*r;
     }
 
+    function clear_crd(event) {
+      document.Main_Form.form_x.value = "";
+	    document.Main_Form.form_y.value = "";
+    }
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Лабораторная работа №8</title>
@@ -73,7 +77,7 @@
         <tr>
             <td>R:</td>
             <td colspan="2">
-              <select name="R" id="R_field">
+              <select name="R" id="R_field" onclick="clear_crd(event)">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
