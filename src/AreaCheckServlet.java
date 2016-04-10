@@ -2,6 +2,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.lang.*;
+import java.util.*;
 
 public class AreaCheckServlet extends HttpServlet {
 
@@ -32,6 +33,13 @@ public class AreaCheckServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		ServletContext context = request.getSession().getServletContext();
+
+		List<String[]> reqlist = (List<String[]>)context.getAttribute("reqlist");
+		if(reqlist == null)
+			reqlist = new ArrayList<String[]>();
+		reqlist.add(new String[]{x_str,y_str,r_str,res});
+		context.setAttribute("reqlist",reqlist);
+
 		InputStream inputStream = context.getResourceAsStream("/response_form.html");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 		String thisLine;

@@ -8,7 +8,7 @@
   </servlet>
   <servlet>
     <servlet-name>webform</servlet-name>
-    <servlet-class>WebFormServlet</servlet-class>
+    <jsp-file>request_form.jsp</jsp-file>
   </servlet>
   <servlet>
     <servlet-name>areacheck</servlet-name>

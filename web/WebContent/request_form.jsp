@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN http://www.w3.org/TR/html4/strict.dtd">
+<%@ page import="java.util.*" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
     <script type="text/javascript">
@@ -61,6 +62,22 @@
     </form>
 </table>
 
+<table>
+<%
+    List<String[]> reqlist = (List<String[]>)application.getAttribute("reqlist");
+    if( reqlist != null){
+      for (String[] req : reqlist) {
+        %>
+         <tr>
+           <% for (String str : req) { %>
+           <td><% out.println( str ); %></td>
+           <% } %>
+         </tr>
+        <%
+      }
+    }
+%>
+</table>
 
 </body>
 </html>
