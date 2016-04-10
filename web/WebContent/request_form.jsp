@@ -28,7 +28,7 @@
 
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Лабораторная работа №7</title>
+    <title>Лабораторная работа №8</title>
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
 
 </head>
@@ -39,26 +39,26 @@
         <tr>
             <td colspan="4">
                 <header>
-                    <h1>Лабораторная работа №7
-                      <br>Выполнили студенты гр. P3210:<br>Милосердов А.О.<br>Калугин Ф.И.<br>Вариант 1010
+                    <h1>Лабораторная работа №8
+                      <br>Выполнили студенты гр. P3210:<br>Милосердов А.О.<br>Калугин Ф.И.<br>Вариант 1016
                     </h1>
                 </header>
             </td>
         </tr>
         <tr>
-            <th colspan="2" class="spaceTop">Data input</th>
-            <th colspan="2" class="spaceTop">Areas</th>
+            <th colspan="3" class="spaceTop" width=75%>Data input</th>
+            <th colspan="1" class="spaceTop">Areas</th>
         </tr>
         <tr>
             <td>Y:</td>
-            <td><input type="text" placeholder="[-5; 5]" name="Y" id="Y_field" required/></td>
-            <td colspan="2" rowspan="4" align="center" class="imgCell"><img id="pointer_div" onclick="point_it(event)" src="img/TrimmedAreas.png">
-            You pointed on x = <input type="text" name="form_x" size="4" /> - y = <input type="text" name="form_y" size="4" />
+            <td colspan="2"><input type="text" placeholder="[-5; 5]" name="Y" id="Y_field" required/></td>
+            <td colspan="1" rowspan="4" align="center" class="imgCell"><img id="pointer_div" onclick="point_it(event)" src="img/TrimmedAreas.png">
+            x = <input type="text" name="form_x" size="10%" disabled/> <br> y = <input type="text" name="form_y" size="10%" disabled/>
             </td>
         </tr>
         <tr>
             <td>X:</td>
-			  <td>
+			  <td colspan="2">
 				    <button type="submit" name="X" value="-2" id="X_field_-2">-2</button><br>
 				    <button type="submit" name="X" value="-1.5" id="X_field_-1.5">-1.5</button><br>
 				    <button type="submit" name="X" value="-1" id="X_field_-1">-1</button><br>
@@ -72,7 +72,7 @@
         </tr>
         <tr>
             <td>R:</td>
-            <td>
+            <td colspan="2">
               <select name="R" id="R_field">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -107,6 +107,5 @@
       }
   %>
 </table>
-
 </body>
 </html>
