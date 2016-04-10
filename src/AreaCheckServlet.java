@@ -10,7 +10,7 @@ public class AreaCheckServlet extends HttpServlet {
 	private double y;
 	private double r;
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException
 	{
 		response.setContentType("text/html; charset=UTF-8");
@@ -61,11 +61,16 @@ public class AreaCheckServlet extends HttpServlet {
 		} catch (NumberFormatException e) {
 			return false;
 		}
-		boolean ok = false;
+		boolean ok_x = false;
 		for (double i=-2; i <= 2; i+=0.5) {
-			if(this.y == i) ok = true;
+			if(this.x == i) ok_x = true;
 		}
-		if(this.x>=-5 && this.x<=5 && this.r>=1 && this.r<=4 && ok)
+		boolean ok_r = false;
+		for (double i=1; i <= 5; i++) {
+			if(this.r == i) ok_r = true;
+		}
+
+		if(this.y>=-5 && this.y<=5 && ok_x && ok_r)
 			return true;
 		return false;
 	}
@@ -73,21 +78,21 @@ public class AreaCheckServlet extends HttpServlet {
 	public boolean contains(double x, double y, double r)
 	{
 		//rectangle
-		if (x <= 0 &&
-				x >= -r &&
+		if (x >= 0 &&
+				x <= -r/2 &&
 				y <= 0 &&
-				y >= -r/2)
+				y >= -r)
 		return true;
 
 		//triangle
 		if (x >= 0 &&
-				y <= 0 &&
-				y >= 2*x-r)
+				y >= 0 &&
+				y <= -x+r/2)
 		return true;
 
 		//circle
-		if (x >= 0 &&
-				y >= 0 &&
+		if (x <= 0 &&
+				y <= 0 &&
 				(x*x + y*y) <= r*r)
 		return true;
 

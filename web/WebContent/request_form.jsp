@@ -6,11 +6,9 @@
 <head>
     <script type="text/javascript">
     function validateForm() {
-      var x_str = document.forms["Main_Form"]["X"].value;
-      var r_str = document.forms["Main_Form"]["R"].value;
-      var x = parseFloat(x_str);
-      var r = parseFloat(r_str);
-      if (x!=NaN && x>=-5 && x<=5 && r!=NaN && r>=1 && r<=4)
+      var y_str = document.forms["Main_Form"]["Y"].value;
+      var y = parseFloat(y_str);
+      if (y!=NaN && y>=-5 && y<=5)
         return true;
       alert("WRONG INPUT!!1!ONE!");
       return false;
@@ -24,7 +22,7 @@
 
 <body>
   <table>
-    <form action="" onSubmit="return validateForm()" method="GET" name="Main_Form" id="main">
+    <form action="" onSubmit="return validateForm()" method="POST" name="Main_Form" id="main">
         <tr>
             <td colspan="3">
                 <header>
@@ -39,27 +37,35 @@
             <th class="spaceTop">Areas</th>
         </tr>
         <tr>
-            <td>X:</td>
-            <td><input type="text" placeholder="[-5; 5]" name="X" id="X_field" required/></td>
+            <td>Y:</td>
+            <td><input type="text" placeholder="[-5; 5]" name="Y" id="Y_field" required/></td>
             <td rowspan="4" class="imgCell"><img src="img/areas.png"></td>
         </tr>
         <tr>
-            <td>Y:</td>
+            <td>X:</td>
 			  <td>
-				    <button type="submit" name="Y" value="-2" id="Y_field_-2">-2</button><br>
-				    <button type="submit" name="Y" value="-1.5" id="Y_field_-1.5">-1.5</button><br>
-				    <button type="submit" name="Y" value="-1" id="Y_field_-1">-1</button><br>
-				    <button type="submit" name="Y" value="-0.5" id="Y_field_-0.5">-0.5</button><br>
-			    	<button type="submit" name="Y" value="0" id="Y_field_0">0</button><br>
-				    <button type="submit" name="Y" value="0.5" id="Y_field_0.5">0.5</button><br>
-				    <button type="submit" name="Y" value="1" id="Y_field_1">1</button><br>
-				    <button type="submit" name="Y" value="1.5" id="Y_field_1.5">1.5</button><br>
-				    <button type="submit" name="Y" value="2" id="Y_field_2">2</button><br>
+				    <button type="submit" name="X" value="-2" id="X_field_-2">-2</button><br>
+				    <button type="submit" name="X" value="-1.5" id="X_field_-1.5">-1.5</button><br>
+				    <button type="submit" name="X" value="-1" id="X_field_-1">-1</button><br>
+				    <button type="submit" name="X" value="-0.5" id="X_field_-0.5">-0.5</button><br>
+			    	<button type="submit" name="X" value="0" id="X_field_0">0</button><br>
+				    <button type="submit" name="X" value="0.5" id="X_field_0.5">0.5</button><br>
+				    <button type="submit" name="X" value="1" id="X_field_1">1</button><br>
+				    <button type="submit" name="X" value="1.5" id="X_field_1.5">1.5</button><br>
+				    <button type="submit" name="X" value="2" id="X_field_2">2</button><br>
 			  <td>
         </tr>
         <tr>
             <td>R:</td>
-            <td><input type="text" placeholder="[1; 4]" name="R" id="R_field" required/></td>
+            <td>
+              <select name="R" id="R_field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
         </tr>
     </form>
 </table>
